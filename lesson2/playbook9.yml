@@ -1,0 +1,12 @@
+- name: Create users
+  hosts: "*"
+  tasks:
+  - shell: "cd .. ; ls"
+    register: result
+
+  - debug:
+      var: result 
+
+  - debug:
+      msg: "john's instance"
+    when: result.stdout.find("john") != -1
