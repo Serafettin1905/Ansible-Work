@@ -1,0 +1,20 @@
+---
+- name: Copy ip address to node1
+  hosts: node1
+  vars:
+    ip_address: 172.31.41.82
+  tasks:
+    - name: Copy ip address to the nodes
+      ansible.builtin.copy:
+        content: "Private ip address of this node is {{ ip_address }}"
+        dest: /home/ec2-user/myfile2
+
+- name: Copy ip address to node2
+  hosts: node2
+  vars:
+    ip_address: 172.31.38.253
+  tasks:
+   - name: Copy ip address to the nodes
+     ansible.builtin.copy:
+       content: 'Private ip address of this node is {{ ip_address }}'
+       dest: /home/ec2-user/myfile2
