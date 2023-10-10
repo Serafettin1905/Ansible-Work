@@ -1,0 +1,10 @@
+- src: git+https://github.com/geerlingguy/ansible-role-docker
+  name: docker
+  version: 7.0.1
+
+- src: git+https://github.com/geerlingguy/ansible-role-ntp
+  version: 2.3.3
+  name: ansible-role-ntp
+
+- src: git+https://github.com/UnderGreen/ansible-prometheus-node-exporter
+  version: 1.5.0
