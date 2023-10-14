@@ -1,0 +1,17 @@
+- hosts: localhost
+  tasks: 
+    - name: create file
+      shell: "touch test.txt"
+
+    - name: list files
+      shell: "ls"
+      register: result
+
+    - name: test
+      shell: "echo 'test.txt olusmus' > test.txt" 
+      when: result.stdout.find("test.txt") != -1
+      notify: test_handler
+
+  handlers:
+    - name: test_handler
+      shell: "echo 'handler succeed' >> test.txt"

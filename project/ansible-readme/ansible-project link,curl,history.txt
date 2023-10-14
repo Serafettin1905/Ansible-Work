@@ -1,0 +1,35 @@
+https://hub.docker.com/_/postgres
+https://docs.docker.com/engine/install/centos/
+https://docs.ansible.com/archive/ansible/2.5/modules/yum_module.html
+https://docs.ansible.com/ansible/2.9/modules/docker_container_module.html
+
+
+curl --request POST \
+--url 'http://54.152.170.189:5000/todos' \
+--header 'content-type: application/json' \
+--data '{"description":"ansible project 207"}'
+
+
+
+    1  ansible all -m ping -o
+    2  ansible-inventory --graph
+    3  bash
+    4  ansible-inventory --graph
+    5  cd ansible
+    6  mkdir ansible-project playbooks && cd ansible-project && mkdir postgres nodejs react
+    7  ansible-inventory --graph
+    8  ansible-vault create secret.yml
+    9  cd playbooks/
+   10  ls
+   11  cat secret.yml 
+   12  ansible-vault view secret.yml
+   13  ansible-playbook docker_postgre.yml 
+   14  ansible-playbook docker_postgre.yml --ask-vault-pass
+   15  ansible _ansible_postgresql -m shell -a "docker images"
+   16  ansible _ansible_postgresql -m shell -a "docker ps"
+   17  ansible-playbook docker_postgre.yml --ask-vault-pass --list-tasks
+   18  ansible-playbook docker_nodejs.yml 
+   19  curl --request POST --url 'http://54.152.170.189:5000/todos' --header 'content-type: application/json' --data '{"description":"ansible project 207"}'
+   20* ansible _ansible_nodejs -m shell -a "sudo  ddocker ps -a"
+   21  ansible _ansible_nodejs -m shell -a "sudo docker ps -a"
+   22  ansible-playbook docker_react.yml 
